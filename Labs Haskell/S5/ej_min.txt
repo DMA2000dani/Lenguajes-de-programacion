@@ -1,0 +1,30 @@
+P70540 Expressions
+P50086 Cua2
+
+Ejemplo:
+eval2 :: Expre -> Maybe Int
+eval2 (Add ex ey) = do
+    x <- eval2 ex
+    y <- eval2 ey
+    return $ x + y
+    
+    
+ejecuciones ghci:
+Prelude> fmap (+1) (Just 2)
+Just 3
+Prelude> fmap (+1) Nothing
+Nothing
+Prelude> (+1) <$> (Just 2)
+Just 3
+Prelude> fmap (+1) [1..3]
+[2,3,4]
+Prelude> Just (+1) <*> Just 2
+Just 3
+Prelude> [(+1),(*2)] <*> [1..3]
+[2,3,4,2,4,6]
+Prelude> Just 1 >>= \x -> Just (x+1)
+Just 2
+Prelude> Nothing >>= \x -> Just (x+1)
+Nothing
+Prelude> [1..3] >>= \x -> [x+1]
+[2,3,4]

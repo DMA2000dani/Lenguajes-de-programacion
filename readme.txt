@@ -1,6 +1,6 @@
 Asignatura lenguajes de programación en la que he utilizado un lenguaje de programacion funcional llamado Haskell.
 
-En las carpetas S1-S7 se muestran una serie de ejercicios resueltos utilizano haskell.
+En la carpeta Labs Haskell, se muestran una serie de ejercicios para practicar Haskell.
 
 En la carpeta PrácticaLlull, se puede ver la práctica donde se puede encontrar el enunciado en https://github.com/jordi-petit/lp-llull-2021.
 Esta práctica esta realizada con ANTLR4 y Python. Consiste en "replicar" un compilador, al interpretar un lenguaje inventado llamado Llull.
