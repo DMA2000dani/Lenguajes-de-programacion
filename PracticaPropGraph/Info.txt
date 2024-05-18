@@ -1,0 +1,17 @@
+Preguntes: gerard.escudero@tutanota.com
+
+per carregar un arxiu:
+main = do
+    di <- readFile nomArchiu
+    
+    
+També recordar words i lines
+
+type nom = tipus
+
+instanciar classe Show en comptes de ShowGraph
+
+Definir un 4rt archiu en un altre tipus
+
+
+f p@(p6 x y z) on p és l'objecte i p6, x, y i z es poden accedir

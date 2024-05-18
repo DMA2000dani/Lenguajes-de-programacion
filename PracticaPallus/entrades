@@ -1,0 +1,81 @@
+v1 = Atom {_nomPredicat = "progenitor", _termes = [Sym "pere", Var "Y"]}
+v2 = Atom {_nomPredicat = "progenitor", _termes = [Var "X",Var "Y"]}
+
+a2 = Atom {_nomPredicat = "progenitor", _termes = [Sym "pere",Sym "ana"]}
+a1 = Atom {_nomPredicat = "progenitor", _termes = [Sym "ana",Sym "xerces"]}
+a = Atom {_nomPredicat = "progenitor", _termes = [Sym "pere",Sym "xerces"]}
+
+q1 = Atom {_nomPredicat = "progenitor", _termes = [Var "Y",Sym "pere"]}
+
+b_c = [a1, a, a2]
+r = Regla{_cap = q1, _cos = [v1]}
+
+respon_pregunta b_c r
+resultat ha de ser Y ana Y xerces
+
+
+
+
+
+v2 = Atom {_nomPredicat = "progenitor", _termes = [Var "Y",Var "X"]}
+
+a2 = Atom {_nomPredicat = "progenitor", _termes = [Sym "pere",Sym "ana"]}
+a1 = Atom {_nomPredicat = "progenitor", _termes = [Sym "ana",Sym "xerces"]}
+a = Atom {_nomPredicat = "progenitor", _termes = [Sym "pere",Sym "xerces"]}
+
+q1 = Atom {_nomPredicat = "progenitor", _termes = [Var "Y",Sym "pere"]}
+q2 = Atom {_nomPredicat = "progenitor", _termes = [Var "Y",Var "X"]}
+
+b_c = [a1, a, a2]
+r = Regla{_cap = q2, _cos = [v2]}
+
+respon_pregunta b_c r
+resultat ha de ser Y pere X ana   Y ana X xerces Y pere X xerces
+
+
+
+q1 = Atom {_nomPredicat = "progenitor", _termes = [Var "Y",Sym "pere"]}
+q2 = Atom {_nomPredicat = "progenitor", _termes = [Var "Y",Var "X"]}
+
+a2 = Atom {_nomPredicat = "progenitor", _termes = [Sym "pere",Sym "ana"]}
+a1 = Atom {_nomPredicat = "progenitor", _termes = [Sym "ana",Sym "xerces"]}
+a = Atom {_nomPredicat = "progenitor", _termes = [Sym "pere",Sym "xerces"]}
+b_c = [a1, a, a2]
+r = Regla{_cap = q2, _cos = [q2, q2]}
+
+avaluaRegla b_c r
+
+
+v2 = Atom {_nomPredicat = "progenitor", _termes = [Var "X",Var "Y"]}
+r = Regla{_cap = q2, _cos = [v2]}
+
+respon_pregunta b_c r
+resultat ha de ser []
+
+
+
+
+
+
+
+
+
+
+
+head( tail (splitOn "end." "progenitor ana brooke.progenitor xerces brooke.progenitor brooke damocles.progenitor X Y => ancestre X Y.progenitor X Z & ancestre Z Y => ancestre X Y. end.progenitor xerces brooke => query.progenitor brooke xerces => query. ancestre brooke damocles => query.ancestre xerces damocles => query.ancestre Ancestre damocles => query Ancestre.ancestre xerces X & ancestre X damocles => query X.ancestre X Y & ancestre Y damocles => query X Y. end."))
+
+
+progenitor ana brooke.progenitor xerces brooke.progenitor brooke damocles.progenitor X Y => ancestre X Y.progenitor X Z & ancestre Z Y => ancestre X Y. end.progenitor xerces brooke => query.progenitor brooke xerces => query.ancestre brooke damocles => query.ancestre xerces damocles => query.ancestre Ancestre damocles => query Ancestre.
+
+
+programa = parsejar (head (splitOn "end." "progenitor ana brooke.progenitor xerces brooke.progenitor brooke damocles.progenitor X Y => ancestre X Y.progenitor X Z & ancestre Z Y => ancestre X Y.
+b_c = consequencia programa [])
+
+progenitor ana brooke.
+progenitor xerces brooke => query.
+
+
+progenitor ana brooke.progenitor xerces brooke.progenitor brooke damocles.progenitor X Y => ancestre X Y.progenitor X Z & ancestre Z Y => ancestre X Y.end.progenitor xerces brooke => query.progenitor brooke xerces => query.ancestre brooke damocles => query.ancestre xerces damocles => query.ancestre Ancestre damocles => query Ancestre.end.
+
+
+print avaluaAtom b_c v2 []

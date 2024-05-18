@@ -1,0 +1,304 @@
+n1[Person]{(firstName,Joan)(lastName,Canals)(gender,Male)(birthday,12-07-95)(homeTown,Barcelona)}
+p1[Profile]{(workPlace,Google)(workPosition,ProjectLeader)(country,USA)(jobTraining,CS-engineer)(seniority,10)(awards,3)(nLikes,100)}
+n2[Person]{(firstName,Rosa)(lastName,Martinez)(gender,female)(country,Spain)}
+p2[Profile]{(workPlace,Google)(country,USA)(jobTraining,CS-engineer)(nLikes,1)(workingSince,1-1-2016)}
+n3[Person]{(firstName,Teresa)(lastName,Blanco)(birthday,06-11-92)(country,Spain)}
+p3[Profile]{(workPlace,Meta)(workPosition,ProjectLeader)(country,USA)(jobTraining,CS-engineer)(nLikes,5)(workingSince,1-9-2021)}
+n4[Person]{(firstName,Bob)(lastName,Rusell)(homeTown,Houston)(country,USA)}
+p4[Profile]{(workPlace,Google)(workPosition,developer)(country,Cibespace)(jobTraining,CS-engineer)(workingSince,22-10-2019)}
+n5[Person]{(firstName,Alice)(lastName,Rodriguez)(homeTown,NewYork)(country,USA)(gender,female)(birthday,10-12-96)}
+p5[Profile]{(workPlace,MNG)(workPosition,DataScientist)(country,Spain)(jobTraining,Economist)(awards,1)(nLikes,3)(workingSince,10-3-2017)}
+n6[Person]{(firstName,Luis)(lastName,Jackson)(country,Panama)}
+p6[Profile]{(workPlace,UPC)(workPosition,Lecturer)(country,Spain)(jobTraining,Mathematician)(seniority,20)(awards,1)(nLikes,10)}
+n7[Person]{(firstName,Anna)(lastName,Lopez)(homeTown,Barcelona)(birthday,23-05-96)}
+p7[Profile]{(workPlace,UPC)(workPosition,Lecturer)(country,Spain)(jobTraining,CS-engineer)(seniority,15)}
+n8[Person]{(firstName,Chiara)(lastName,Figarella)(gender,female)(Country,Venezuela)}
+p8[Profile]{(workPlace,MNG)(workPosition,ProjectLeader)(country,Spain)(jobTraining,CS-engineer)(workingSince,1-4-2010)}
+n9[Person]{(firstName,Tomas)(lastName,Coll)(Country,Spain)}
+p9[Profile]{(workPlace,Meta)(workPosition,3DGraphicalDesigner)(country,Ciberspace)(jobTraining,CS-engineer)(nLikes,3)(workingSince,15-10-2021)}
+n10[Person]{(fistName,Josep)(lastName,Garcia)(gender,male)}
+p10[Profile]{(workPlace,UPC)(workPosition,Lecturer)(city,Barcelona)(jobTraining,CS-engineer)(seniority,15)(awards,1)(nLikes,10)}
+10[Error: no existeix vertex amb nom 10]{}
+pt1[Post]{(content,Use-Higher-Order-Functions-when-necessary)(nLikes,100)}
+pt2[Post]{(content,Take-care-the-efficiency-of-your-programs)(nLikes,20)(date,23-10-2021)}
+pt3[Post]{(content,Take-care-the-memory-consum-of-your-programs)(nLikes,25)(date,15-9-2021)}
+pt4[Post]{(content,Take-care-the-legibility-of-your-programs)(nLikes,20)(date,15-9-2021)}
+pt5[Post]{(content,Enjoy-programming-in-Haskell)(nLikes,100)(date,15-9-2021)}
+pt6[Post]{(content,Mind-the-indentation-in-your-programs)(nLikes,35)(date,23-10-2021)}
+i1[Image]{(location,Barcelona)(nLikes,50)}
+i2[Image]{(location,Caracas)(nLikes,50)(date,26-10-2019)}
+i3[Image]{(location,NewYork)(date,12-12-2017)}
+i4[Image]{(location,Tibidabo)(nlikes,10)(date,15-10-2021)}
+i6[Image]{}
+i7[Image]{}
+i5[Image]{}
+i8[Image]{}
+
+(n1)-e1[has]-> (p1) {}
+(n2)-e2[has]-> (p2) {}
+(n3)-e3[has]-> (p3) {}
+(n4)-e4[has]-> (p4) {}
+(n5)-e5[has]-> (p5) {}
+(n6)-e6[has]-> (p6) {}
+(n7)-e7[has]-> (p7) {}
+(n8)-e8[has]-> (p8) {}
+(n9)-e9[has]-> (p9) {}
+(n10)-e10[has]-> (p10) {}
+(n5)-f1[follows]-> (n7) {(since,14-2-2019)}
+(n7)-f2[follows]-> (n1) {(since,26-7-2018)}
+(n3)-f3[follows]-> (n1) {(since,5-4-2019)}
+(n2)-f4[follows]-> (n1) {}
+(n1)-f5[follows]-> (n2) {}
+(n2)-f6[follows]-> (n8) {(since,7-8-2020)}
+(n7)-f7[follows]-> (n8) {}
+(n8)-f8[follows]-> (n7) {}
+(n4)-f9[follows]-> (n8) {(since,16-9-2016)}
+(n8)-f10[follows]-> (n4) {}
+(n3)-f11[follows]-> (n5) {(since,24-8-2018)}
+(n10)-f12[follows]-> (n5) {}
+(n6)-f13[follows]-> (10) {(since,28-9-2016)}
+(n6)-f14[follows]-> (n4) {(since,6-9-2017)}
+(n4)-f15[follows]-> (n6) {(since,15-4-2017)}
+(n4)-f16[follows]-> (n9) {(since,7-12-2019)}
+(n7)-f17[follows]-> (n10) {}
+(n1)-pp1[publishes]-> (pt1) {(date,16-12-2018)}
+(n2)-pp2[publishes]-> (pt2) {(date,17-11-2020)}
+(n4)-pp3[publishes]-> (pt3) {(date,15-9-2018)}
+(n4)-pp4[publishes]-> (pt4) {(date,13-5-2019)}
+(n9)-pp5[publishes]-> (pt5) {(date,4-12-2020)}
+(n9)-pp6[publishes]-> (pt6) {(date,4-12-2019)}
+(n1)-pi1[publishes]-> (i1) {}
+(n2)-pi2[publishes]-> (i2) {(date,29-2-2020)}
+(n2)-pi3[publishes]-> (i3) {(date,3-8-2019)}
+(n4)-pi4[publishes]-> (i4) {(date,19-10-2021)}
+(n9)-pi5[publishes]-> (i6) {(date,17-11-2017)}
+(n9)-pi6[publishes]-> (i7) {}
+(n5)-pi7[publishes]-> (i5) {}
+(n3)-pi8[publishes]-> (i8) {(since,5-7-2020)}
+(n1)-l1[likes]-> (p2) {}
+(n1)-l2[likes]-> (pt2) {}
+(n8)-l4[likes]-> (i4) {}
+(n8)-l3[likes]-> (pt4) {}
+(n3)-l5[likes]-> (i2) {}
+(n3)-l6[likes]-> (pt1) {}
+(n3)-l7[likes]-> (i1) {}
+(n6)-l8[likes]-> (p10) {}
+(n6)-l9[likes]-> (i4) {}
+(n4)-l10[likes]-> (i4) {}
+(n1)-ed1[endorses]-> (p2) {}
+(n4)-ed2[endorses]-> (p10) {}
+(n8)-ed3[endorses]-> (p7) {}
+(n2)-ed4[endorses]-> (p1) {}
+
+
+PG {_vertexs = 
+["n1","p1","n2","p2","n3","p3","n4","p4","n5","p5","n6","p6","n7","p7","n8","p8","n9","p9","n10","p10","10","pt1","pt2","pt3","
+pt4","pt5","pt6","i1","i2","i3","i4","i6","i7","i5","i8"], _edges = [Edge {_nomEdge = "e1", _nomNodeInici = "n1", _nomNodeFi = 
+"p1"},Edge {_nomEdge = "e2", _nomNodeInici = "n2", _nomNodeFi = "p2"},Edge {_nomEdge = "e3", _nomNodeInici = "n3", _nomNodeFi = 
+"p3"},Edge {_nomEdge = "e4", _nomNodeInici = "n4", _nomNodeFi = "p4"},Edge {_nomEdge = "e5", _nomNodeInici = "n5", _nomNodeFi = 
+"p5"},Edge {_nomEdge = "e6", _nomNodeInici = "n6", _nomNodeFi = "p6"},Edge {_nomEdge = "e7", _nomNodeInici = "n7", _nomNodeFi = 
+"p7"},Edge {_nomEdge = "e8", _nomNodeInici = "n8", _nomNodeFi = "p8"},Edge {_nomEdge = "e9", _nomNodeInici = "n9", _nomNodeFi = 
+"p9"},Edge {_nomEdge = "e10", _nomNodeInici = "n10", _nomNodeFi = "p10"},Edge {_nomEdge = "f1", _nomNodeInici = "n5", 
+_nomNodeFi = "n7"},Edge {_nomEdge = "f2", _nomNodeInici = "n7", _nomNodeFi = "n1"},Edge {_nomEdge = "f3", _nomNodeInici = "n3", 
+_nomNodeFi = "n1"},Edge {_nomEdge = "f4", _nomNodeInici = "n2", _nomNodeFi = "n1"},Edge {_nomEdge = "f5", _nomNodeInici = "n1", 
+_nomNodeFi = "n2"},Edge {_nomEdge = "f6", _nomNodeInici = "n2", _nomNodeFi = "n8"},Edge {_nomEdge = "f7", _nomNodeInici = "n7", 
+_nomNodeFi = "n8"},Edge {_nomEdge = "f8", _nomNodeInici = "n8", _nomNodeFi = "n7"},Edge {_nomEdge = "f9", _nomNodeInici = "n4", 
+_nomNodeFi = "n8"},Edge {_nomEdge = "f10", _nomNodeInici = "n8", _nomNodeFi = "n4"},Edge {_nomEdge = "f11", _nomNodeInici = 
+"n3", _nomNodeFi = "n5"},Edge {_nomEdge = "f12", _nomNodeInici = "n10", _nomNodeFi = "n5"},Edge {_nomEdge = "f13", 
+_nomNodeInici = "n6", _nomNodeFi = "10"},Edge {_nomEdge = "f14", _nomNodeInici = "n6", _nomNodeFi = "n4"},Edge {_nomEdge = 
+"f15", _nomNodeInici = "n4", _nomNodeFi = "n6"},Edge {_nomEdge = "f16", _nomNodeInici = "n4", _nomNodeFi = "n9"},Edge {_nomEdge 
+= "f17", _nomNodeInici = "n7", _nomNodeFi = "n10"},Edge {_nomEdge = "pp1", _nomNodeInici = "n1", _nomNodeFi = "pt1"},Edge 
+{_nomEdge = "pp2", _nomNodeInici = "n2", _nomNodeFi = "pt2"},Edge {_nomEdge = "pp3", _nomNodeInici = "n4", _nomNodeFi = 
+"pt3"},Edge {_nomEdge = "pp4", _nomNodeInici = "n4", _nomNodeFi = "pt4"},Edge {_nomEdge = "pp5", _nomNodeInici = "n9", 
+_nomNodeFi = "pt5"},Edge {_nomEdge = "pp6", _nomNodeInici = "n9", _nomNodeFi = "pt6"},Edge {_nomEdge = "pi1", _nomNodeInici = 
+"n1", _nomNodeFi = "i1"},Edge {_nomEdge = "pi2", _nomNodeInici = "n2", _nomNodeFi = "i2"},Edge {_nomEdge = "pi3", _nomNodeInici 
+= "n2", _nomNodeFi = "i3"},Edge {_nomEdge = "pi4", _nomNodeInici = "n4", _nomNodeFi = "i4"},Edge {_nomEdge = "pi5", 
+_nomNodeInici = "n9", _nomNodeFi = "i6"},Edge {_nomEdge = "pi6", _nomNodeInici = "n9", _nomNodeFi = "i7"},Edge {_nomEdge = 
+"pi7", _nomNodeInici = "n5", _nomNodeFi = "i5"},Edge {_nomEdge = "pi8", _nomNodeInici = "n3", _nomNodeFi = "i8"},Edge {_nomEdge 
+= "l1", _nomNodeInici = "n1", _nomNodeFi = "p2"},Edge {_nomEdge = "l2", _nomNodeInici = "n1", _nomNodeFi = "pt2"},Edge 
+{_nomEdge = "l4", _nomNodeInici = "n8", _nomNodeFi = "i4"},Edge {_nomEdge = "l3", _nomNodeInici = "n8", _nomNodeFi = 
+"pt4"},Edge {_nomEdge = "l5", _nomNodeInici = "n3", _nomNodeFi = "i2"},Edge {_nomEdge = "l6", _nomNodeInici = "n3", _nomNodeFi 
+= "pt1"},Edge {_nomEdge = "l7", _nomNodeInici = "n3", _nomNodeFi = "i1"},Edge {_nomEdge = "l8", _nomNodeInici = "n6", 
+_nomNodeFi = "p10"},Edge {_nomEdge = "l9", _nomNodeInici = "n6", _nomNodeFi = "i4"},Edge {_nomEdge = "l10", _nomNodeInici = 
+"n4", _nomNodeFi = "i4"},Edge {_nomEdge = "ed1", _nomNodeInici = "n1", _nomNodeFi = "p2"},Edge {_nomEdge = "ed2", _nomNodeInici 
+= "n4", _nomNodeFi = "p10"},Edge {_nomEdge = "ed3", _nomNodeInici = "n8", _nomNodeFi = "p7"},Edge {_nomEdge = "ed4", 
+_nomNodeInici = "n2", _nomNodeFi = "p1"}], _labels = [Right (Etiqueta {_nomNode = "n1", _nomEtiqueta = "Person"}),Right 
+(Etiqueta {_nomNode = "n2", _nomEtiqueta = "Person"}),Right (Etiqueta {_nomNode = "n3", _nomEtiqueta = "Person"}),Right 
+(Etiqueta {_nomNode = "n4", _nomEtiqueta = "Person"}),Right (Etiqueta {_nomNode = "n5", _nomEtiqueta = "Person"}),Right 
+(Etiqueta {_nomNode = "n6", _nomEtiqueta = "Person"}),Right (Etiqueta {_nomNode = "n7", _nomEtiqueta = "Person"}),Right 
+(Etiqueta {_nomNode = "n8", _nomEtiqueta = "Person"}),Right (Etiqueta {_nomNode = "n9", _nomEtiqueta = "Person"}),Right 
+(Etiqueta {_nomNode = "n10", _nomEtiqueta = "Person"}),Right (Etiqueta {_nomNode = "p1", _nomEtiqueta = "Profile"}),Right 
+(Etiqueta {_nomNode = "p2", _nomEtiqueta = "Profile"}),Right (Etiqueta {_nomNode = "p3", _nomEtiqueta = "Profile"}),Right 
+(Etiqueta {_nomNode = "p4", _nomEtiqueta = "Profile"}),Right (Etiqueta {_nomNode = "p5", _nomEtiqueta = "Profile"}),Right 
+(Etiqueta {_nomNode = "p6", _nomEtiqueta = "Profile"}),Right (Etiqueta {_nomNode = "p7", _nomEtiqueta = "Profile"}),Right 
+(Etiqueta {_nomNode = "p8", _nomEtiqueta = "Profile"}),Right (Etiqueta {_nomNode = "p9", _nomEtiqueta = "Profile"}),Right 
+(Etiqueta {_nomNode = "p10", _nomEtiqueta = "Profile"}),Right (Etiqueta {_nomNode = "pt1", _nomEtiqueta = "Post"}),Right 
+(Etiqueta {_nomNode = "pt2", _nomEtiqueta = "Post"}),Right (Etiqueta {_nomNode = "pt3", _nomEtiqueta = "Post"}),Right (Etiqueta 
+{_nomNode = "pt4", _nomEtiqueta = "Post"}),Right (Etiqueta {_nomNode = "pt5", _nomEtiqueta = "Post"}),Right (Etiqueta {_nomNode 
+= "pt6", _nomEtiqueta = "Post"}),Right (Etiqueta {_nomNode = "i1", _nomEtiqueta = "Image"}),Right (Etiqueta {_nomNode = "i2", 
+_nomEtiqueta = "Image"}),Right (Etiqueta {_nomNode = "i3", _nomEtiqueta = "Image"}),Right (Etiqueta {_nomNode = "i4", 
+_nomEtiqueta = "Image"}),Right (Etiqueta {_nomNode = "i5", _nomEtiqueta = "Image"}),Right (Etiqueta {_nomNode = "i6", 
+_nomEtiqueta = "Image"}),Right (Etiqueta {_nomNode = "i7", _nomEtiqueta = "Image"}),Right (Etiqueta {_nomNode = "i8", 
+_nomEtiqueta = "Image"}),Right (Etiqueta {_nomNode = "e1", _nomEtiqueta = "has"}),Right (Etiqueta {_nomNode = "e2", 
+_nomEtiqueta = "has"}),Right (Etiqueta {_nomNode = "e3", _nomEtiqueta = "has"}),Right (Etiqueta {_nomNode = "e4", _nomEtiqueta 
+= "has"}),Right (Etiqueta {_nomNode = "e5", _nomEtiqueta = "has"}),Right (Etiqueta {_nomNode = "e6", _nomEtiqueta = 
+"has"}),Right (Etiqueta {_nomNode = "e7", _nomEtiqueta = "has"}),Right (Etiqueta {_nomNode = "e8", _nomEtiqueta = "has"}),Right 
+(Etiqueta {_nomNode = "e9", _nomEtiqueta = "has"}),Right (Etiqueta {_nomNode = "e10", _nomEtiqueta = "has"}),Right (Etiqueta 
+{_nomNode = "f1", _nomEtiqueta = "follows"}),Right (Etiqueta {_nomNode = "f2", _nomEtiqueta = "follows"}),Right (Etiqueta 
+{_nomNode = "f3", _nomEtiqueta = "follows"}),Right (Etiqueta {_nomNode = "f4", _nomEtiqueta = "follows"}),Right (Etiqueta 
+{_nomNode = "f5", _nomEtiqueta = "follows"}),Right (Etiqueta {_nomNode = "f6", _nomEtiqueta = "follows"}),Right (Etiqueta 
+{_nomNode = "f7", _nomEtiqueta = "follows"}),Right (Etiqueta {_nomNode = "f8", _nomEtiqueta = "follows"}),Right (Etiqueta 
+{_nomNode = "f9", _nomEtiqueta = "follows"}),Right (Etiqueta {_nomNode = "f10", _nomEtiqueta = "follows"}),Right (Etiqueta 
+{_nomNode = "f11", _nomEtiqueta = "follows"}),Right (Etiqueta {_nomNode = "f12", _nomEtiqueta = "follows"}),Right (Etiqueta 
+{_nomNode = "f13", _nomEtiqueta = "follows"}),Right (Etiqueta {_nomNode = "f14", _nomEtiqueta = "follows"}),Right (Etiqueta 
+{_nomNode = "f15", _nomEtiqueta = "follows"}),Right (Etiqueta {_nomNode = "f16", _nomEtiqueta = "follows"}),Right (Etiqueta 
+{_nomNode = "f17", _nomEtiqueta = "follows"}),Right (Etiqueta {_nomNode = "pp1", _nomEtiqueta = "publishes"}),Right (Etiqueta 
+{_nomNode = "pp2", _nomEtiqueta = "publishes"}),Right (Etiqueta {_nomNode = "pp3", _nomEtiqueta = "publishes"}),Right (Etiqueta 
+{_nomNode = "pp4", _nomEtiqueta = "publishes"}),Right (Etiqueta {_nomNode = "pp5", _nomEtiqueta = "publishes"}),Right (Etiqueta 
+{_nomNode = "pp6", _nomEtiqueta = "publishes"}),Right (Etiqueta {_nomNode = "pi1", _nomEtiqueta = "publishes"}),Right (Etiqueta 
+{_nomNode = "pi2", _nomEtiqueta = "publishes"}),Right (Etiqueta {_nomNode = "pi3", _nomEtiqueta = "publishes"}),Right (Etiqueta 
+{_nomNode = "pi4", _nomEtiqueta = "publishes"}),Right (Etiqueta {_nomNode = "pi5", _nomEtiqueta = "publishes"}),Right (Etiqueta 
+{_nomNode = "pi6", _nomEtiqueta = "publishes"}),Right (Etiqueta {_nomNode = "pi7", _nomEtiqueta = "publishes"}),Right (Etiqueta 
+{_nomNode = "pi8", _nomEtiqueta = "publishes"}),Right (Etiqueta {_nomNode = "l1", _nomEtiqueta = "likes"}),Right (Etiqueta 
+{_nomNode = "l2", _nomEtiqueta = "likes"}),Right (Etiqueta {_nomNode = "l3", _nomEtiqueta = "likes"}),Right (Etiqueta {_nomNode 
+= "l4", _nomEtiqueta = "likes"}),Right (Etiqueta {_nomNode = "l5", _nomEtiqueta = "likes"}),Right (Etiqueta {_nomNode = "l6", 
+_nomEtiqueta = "likes"}),Right (Etiqueta {_nomNode = "l7", _nomEtiqueta = "likes"}),Right (Etiqueta {_nomNode = "l8", 
+_nomEtiqueta = "likes"}),Right (Etiqueta {_nomNode = "l9", _nomEtiqueta = "likes"}),Right (Etiqueta {_nomNode = "l10", 
+_nomEtiqueta = "likes"}),Right (Etiqueta {_nomNode = "ed1", _nomEtiqueta = "endorses"}),Right (Etiqueta {_nomNode = "ed2", 
+_nomEtiqueta = "endorses"}),Right (Etiqueta {_nomNode = "ed3", _nomEtiqueta = "endorses"}),Right (Etiqueta {_nomNode = "ed4", 
+_nomEtiqueta = "endorses"})], _sigma = [Sigma {_nomVertex = "n1", _propietat = Prop {_nomP = "firstName", _val = VS 
+"Joan"}},Sigma {_nomVertex = "n1", _propietat = Prop {_nomP = "lastName", _val = VS "Canals"}},Sigma {_nomVertex = "n1", 
+_propietat = Prop {_nomP = "gender", _val = VS "Male"}},Sigma {_nomVertex = "n1", _propietat = Prop {_nomP = "birthday", _val = 
+VS "12-07-95"}},Sigma {_nomVertex = "n1", _propietat = Prop {_nomP = "homeTown", _val = VS "Barcelona"}},Sigma {_nomVertex = 
+"n2", _propietat = Prop {_nomP = "firstName", _val = VS "Rosa"}},Sigma {_nomVertex = "n2", _propietat = Prop {_nomP = 
+"lastName", _val = VS "Martinez"}},Sigma {_nomVertex = "n2", _propietat = Prop {_nomP = "gender", _val = VS "female"}},Sigma 
+{_nomVertex = "n2", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "n3", _propietat = Prop 
+{_nomP = "firstName", _val = VS "Teresa"}},Sigma {_nomVertex = "n3", _propietat = Prop {_nomP = "lastName", _val = VS 
+"Blanco"}},Sigma {_nomVertex = "n3", _propietat = Prop {_nomP = "birthday", _val = VS "06-11-92"}},Sigma {_nomVertex = "n3", 
+_propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "n4", _propietat = Prop {_nomP = "firstName", 
+_val = VS "Bob"}},Sigma {_nomVertex = "n4", _propietat = Prop {_nomP = "lastName", _val = VS "Rusell"}},Sigma {_nomVertex = 
+"n4", _propietat = Prop {_nomP = "homeTown", _val = VS "Houston"}},Sigma {_nomVertex = "n4", _propietat = Prop {_nomP = 
+"country", _val = VS "USA"}},Sigma {_nomVertex = "n5", _propietat = Prop {_nomP = "firstName", _val = VS "Alice"}},Sigma 
+{_nomVertex = "n5", _propietat = Prop {_nomP = "lastName", _val = VS "Rodriguez"}},Sigma {_nomVertex = "n5", _propietat = Prop 
+{_nomP = "homeTown", _val = VS "NewYork"}},Sigma {_nomVertex = "n5", _propietat = Prop {_nomP = "country", _val = VS 
+"USA"}},Sigma {_nomVertex = "n5", _propietat = Prop {_nomP = "gender", _val = VS "female"}},Sigma {_nomVertex = "n5", 
+_propietat = Prop {_nomP = "birthday", _val = VS "10-12-96"}},Sigma {_nomVertex = "n6", _propietat = Prop {_nomP = "firstName", 
+_val = VS "Luis"}},Sigma {_nomVertex = "n6", _propietat = Prop {_nomP = "lastName", _val = VS "Jackson"}},Sigma {_nomVertex = 
+"n6", _propietat = Prop {_nomP = "country", _val = VS "Panama"}},Sigma {_nomVertex = "n7", _propietat = Prop {_nomP = 
+"firstName", _val = VS "Anna"}},Sigma {_nomVertex = "n7", _propietat = Prop {_nomP = "lastName", _val = VS "Lopez"}},Sigma 
+{_nomVertex = "n7", _propietat = Prop {_nomP = "homeTown", _val = VS "Barcelona"}},Sigma {_nomVertex = "n7", _propietat = Prop 
+{_nomP = "birthday", _val = VS "23-05-96"}},Sigma {_nomVertex = "n8", _propietat = Prop {_nomP = "firstName", _val = VS 
+"Chiara"}},Sigma {_nomVertex = "n8", _propietat = Prop {_nomP = "lastName", _val = VS "Figarella"}},Sigma {_nomVertex = "n8", 
+_propietat = Prop {_nomP = "gender", _val = VS "female"}},Sigma {_nomVertex = "n8", _propietat = Prop {_nomP = "Country", _val 
+= VS "Venezuela"}},Sigma {_nomVertex = "n9", _propietat = Prop {_nomP = "firstName", _val = VS "Tomas"}},Sigma {_nomVertex = 
+"n9", _propietat = Prop {_nomP = "lastName", _val = VS "Coll"}},Sigma {_nomVertex = "n9", _propietat = Prop {_nomP = "Country", 
+_val = VS "Spain"}},Sigma {_nomVertex = "n10", _propietat = Prop {_nomP = "fistName", _val = VS "Josep"}},Sigma {_nomVertex = 
+"n10", _propietat = Prop {_nomP = "lastName", _val = VS "Garcia"}},Sigma {_nomVertex = "n10", _propietat = Prop {_nomP = 
+"gender", _val = VS "male"}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "workPlace", _val = VS "Google"}},Sigma 
+{_nomVertex = "p1", _propietat = Prop {_nomP = "workPosition", _val = VS "ProjectLeader"}},Sigma {_nomVertex = "p1", _propietat 
+= Prop {_nomP = "country", _val = VS "USA"}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-
+engineer"}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "seniority", _val = VI 10}},Sigma {_nomVertex = "p1", 
+_propietat = Prop {_nomP = "awards", _val = VI 3}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "nLikes", _val = VI 
+100}},Sigma {_nomVertex = "p2", _propietat = Prop {_nomP = "workPlace", _val = VS "Google"}},Sigma {_nomVertex = "p2", 
+_propietat = Prop {_nomP = "country", _val = VS "USA"}},Sigma {_nomVertex = "p2", _propietat = Prop {_nomP = "jobTraining", 
+_val = VS "CS-engineer"}},Sigma {_nomVertex = "p2", _propietat = Prop {_nomP = "nLikes", _val = VI 1}},Sigma {_nomVertex = 
+"p2", _propietat = Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 1, _mes = 1, _any = 2016})}},Sigma {_nomVertex = 
+"p3", _propietat = Prop {_nomP = "workPlace", _val = VS "Meta"}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = 
+"workPosition", _val = VS "ProjectLeader"}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = "country", _val = VS 
+"USA"}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p3", 
+_propietat = Prop {_nomP = "nLikes", _val = VI 5}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = "workingSince", _val = 
+VDate (Date {_dia = 1, _mes = 9, _any = 2021})}},Sigma {_nomVertex = "p4", _propietat = Prop {_nomP = "workPlace", _val = VS 
+"Google"}},Sigma {_nomVertex = "p4", _propietat = Prop {_nomP = "workPosition", _val = VS "developer"}},Sigma {_nomVertex = 
+"p4", _propietat = Prop {_nomP = "country", _val = VS "Cibespace"}},Sigma {_nomVertex = "p4", _propietat = Prop {_nomP = 
+"jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p4", _propietat = Prop {_nomP = "workingSince", _val = VDate 
+(Date {_dia = 22, _mes = 10, _any = 2019})}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "workPlace", _val = VS 
+"MNG"}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "workPosition", _val = VS "DataScientist"}},Sigma {_nomVertex = 
+"p5", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = 
+"jobTraining", _val = VS "Economist"}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "awards", _val = VI 1}},Sigma 
+{_nomVertex = "p5", _propietat = Prop {_nomP = "nLikes", _val = VI 3}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = 
+"workingSince", _val = VDate (Date {_dia = 10, _mes = 3, _any = 2017})}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = 
+"workPlace", _val = VS "UPC"}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "workPosition", _val = VS 
+"Lecturer"}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "p6", 
+_propietat = Prop {_nomP = "jobTraining", _val = VS "Mathematician"}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = 
+"seniority", _val = VI 20}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "awards", _val = VI 1}},Sigma {_nomVertex = 
+"p6", _propietat = Prop {_nomP = "nLikes", _val = VI 10}},Sigma {_nomVertex = "p7", _propietat = Prop {_nomP = "workPlace", 
+_val = VS "UPC"}},Sigma {_nomVertex = "p7", _propietat = Prop {_nomP = "workPosition", _val = VS "Lecturer"}},Sigma {_nomVertex 
+= "p7", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "p7", _propietat = Prop {_nomP = 
+"jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p7", _propietat = Prop {_nomP = "seniority", _val = VI 15}},Sigma 
+{_nomVertex = "p8", _propietat = Prop {_nomP = "workPlace", _val = VS "MNG"}},Sigma {_nomVertex = "p8", _propietat = Prop 
+{_nomP = "workPosition", _val = VS "ProjectLeader"}},Sigma {_nomVertex = "p8", _propietat = Prop {_nomP = "country", _val = VS 
+"Spain"}},Sigma {_nomVertex = "p8", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = 
+"p8", _propietat = Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 1, _mes = 4, _any = 2010})}},Sigma {_nomVertex = 
+"p9", _propietat = Prop {_nomP = "workPlace", _val = VS "Meta"}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = 
+"workPosition", _val = VS "3DGraphicalDesigner"}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = "country", _val = VS 
+"Ciberspace"}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex 
+= "p9", _propietat = Prop {_nomP = "nLikes", _val = VI 3}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = "workingSince", 
+_val = VDate (Date {_dia = 15, _mes = 10, _any = 2021})}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "workPlace", 
+_val = VS "UPC"}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "workPosition", _val = VS "Lecturer"}},Sigma 
+{_nomVertex = "p10", _propietat = Prop {_nomP = "city", _val = VS "Barcelona"}},Sigma {_nomVertex = "p10", _propietat = Prop 
+{_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "seniority", _val = VI 
+15}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "awards", _val = VI 1}},Sigma {_nomVertex = "p10", _propietat = Prop 
+{_nomP = "nLikes", _val = VI 10}},Sigma {_nomVertex = "pt1", _propietat = Prop {_nomP = "content", _val = VS "Use-Higher-Order-
+Functions-when-necessary"}},Sigma {_nomVertex = "pt1", _propietat = Prop {_nomP = "nLikes", _val = VI 100}},Sigma {_nomVertex = 
+"pt2", _propietat = Prop {_nomP = "content", _val = VS "Take-care-the-efficiency-of-your-programs"}},Sigma {_nomVertex = "pt2", 
+_propietat = Prop {_nomP = "nLikes", _val = VI 20}},Sigma {_nomVertex = "pt2", _propietat = Prop {_nomP = "date", _val = VDate 
+(Date {_dia = 23, _mes = 10, _any = 2021})}},Sigma {_nomVertex = "pt3", _propietat = Prop {_nomP = "content", _val = VS "Take-
+care-the-memory-consum-of-your-programs"}},Sigma {_nomVertex = "pt3", _propietat = Prop {_nomP = "nLikes", _val = VI 25}},Sigma 
+{_nomVertex = "pt3", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 15, _mes = 9, _any = 2021})}},Sigma 
+{_nomVertex = "pt4", _propietat = Prop {_nomP = "content", _val = VS "Take-care-the-legibility-of-your-programs"}},Sigma 
+{_nomVertex = "pt4", _propietat = Prop {_nomP = "nLikes", _val = VI 20}},Sigma {_nomVertex = "pt4", _propietat = Prop {_nomP = 
+"date", _val = VDate (Date {_dia = 15, _mes = 9, _any = 2021})}},Sigma {_nomVertex = "pt5", _propietat = Prop {_nomP = 
+"content", _val = VS "Enjoy-programming-in-Haskell"}},Sigma {_nomVertex = "pt5", _propietat = Prop {_nomP = "nLikes", _val = VI 
+100}},Sigma {_nomVertex = "pt5", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 15, _mes = 9, _any 
+= 2021})}},Sigma {_nomVertex = "pt6", _propietat = Prop {_nomP = "content", _val = VS "Mind-the-indentation-in-your-
+programs"}},Sigma {_nomVertex = "pt6", _propietat = Prop {_nomP = "nLikes", _val = VI 35}},Sigma {_nomVertex = "pt6", 
+_propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 23, _mes = 10, _any = 2021})}},Sigma {_nomVertex = "i1", 
+_propietat = Prop {_nomP = "location", _val = VS "Barcelona"}},Sigma {_nomVertex = "i1", _propietat = Prop {_nomP = "nLikes", 
+_val = VI 50}},Sigma {_nomVertex = "i2", _propietat = Prop {_nomP = "location", _val = VS "Caracas"}},Sigma {_nomVertex = "i2", 
+_propietat = Prop {_nomP = "nLikes", _val = VI 50}},Sigma {_nomVertex = "i2", _propietat = Prop {_nomP = "date", _val = VDate 
+(Date {_dia = 26, _mes = 10, _any = 2019})}},Sigma {_nomVertex = "i3", _propietat = Prop {_nomP = "location", _val = VS 
+"NewYork"}},Sigma {_nomVertex = "i3", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 12, _mes = 12, _any = 
+2017})}},Sigma {_nomVertex = "i4", _propietat = Prop {_nomP = "location", _val = VS "Tibidabo"}},Sigma {_nomVertex = "i4", 
+_propietat = Prop {_nomP = "nlikes", _val = VS "10"}},Sigma {_nomVertex = "i4", _propietat = Prop {_nomP = "date", _val = VDate 
+(Date {_dia = 15, _mes = 10, _any = 2021})}},Sigma {_nomVertex = "f1", _propietat = Prop {_nomP = "since", _val = VDate (Date 
+{_dia = 14, _mes = 2, _any = 2019})}},Sigma {_nomVertex = "f2", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 
+26, _mes = 7, _any = 2018})}},Sigma {_nomVertex = "f3", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 5, _mes 
+= 4, _any = 2019})}},Sigma {_nomVertex = "f6", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 7, _mes = 8, _any 
+= 2020})}},Sigma {_nomVertex = "f9", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 16, _mes = 9, _any = 
+2016})}},Sigma {_nomVertex = "f11", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 24, _mes = 8, _any = 
+2018})}},Sigma {_nomVertex = "f13", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 28, _mes = 9, _any = 
+2016})}},Sigma {_nomVertex = "f14", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 6, _mes = 9, _any = 
+2017})}},Sigma {_nomVertex = "f15", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 15, _mes = 4, _any = 
+2017})}},Sigma {_nomVertex = "f16", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 7, _mes = 12, _any = 
+2019})}},Sigma {_nomVertex = "pp1", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 16, _mes = 12, _any = 
+2018})}},Sigma {_nomVertex = "pp2", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 17, _mes = 11, _any = 
+2020})}},Sigma {_nomVertex = "pp3", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 15, _mes = 9, _any = 
+2018})}},Sigma {_nomVertex = "pp4", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 13, _mes = 5, _any = 
+2019})}},Sigma {_nomVertex = "pp5", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 4, _mes = 12, _any = 
+2020})}},Sigma {_nomVertex = "pp6", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 4, _mes = 12, _any = 
+2019})}},Sigma {_nomVertex = "pi2", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 29, _mes = 2, _any = 
+2020})}},Sigma {_nomVertex = "pi3", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 3, _mes = 8, _any = 
+2019})}},Sigma {_nomVertex = "pi4", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 19, _mes = 10, _any = 
+2021})}},Sigma {_nomVertex = "pi5", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 17, _mes = 11, _any = 
+2017})}},Sigma {_nomVertex = "pi8", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 5, _mes = 7, _any = 
+2020})}}], _prop = [Prop {_nomP = "location", _val = VS "buit"},Prop {_nomP = "since", _val = VDate (Date {_dia = 0, _mes = 0, 
+_any = 0})},Prop {_nomP = "date", _val = VDate (Date {_dia = 0, _mes = 0, _any = 0})},Prop {_nomP = "nLikes", _val = VI 0},Prop 
+{_nomP = "content", _val = VS "buit"},Prop {_nomP = "firstName", _val = VS "buit"},Prop {_nomP = "lastName", _val = VS 
+"buit"},Prop {_nomP = "gender", _val = VS "buit"},Prop {_nomP = "homeTown", _val = VS "buit"},Prop {_nomP = "homeCountry", _val 
+= VS "buit"},Prop {_nomP = "birthDay", _val = VDate (Date {_dia = 0, _mes = 0, _any = 0})},Prop {_nomP = "workPlace", _val = VS 
+"buit"},Prop {_nomP = "workPosition", _val = VS "buit"},Prop {_nomP = "city", _val = VS "buit"},Prop {_nomP = "country", _val =
+VS "buit"},Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 0, _mes = 0, _any = 0})},Prop {_nomP = "jobTraining", _val =
+VS "buit"},Prop {_nomP = "awards", _val = VI 0},Prop {_nomP = "seniority", _val = VI 0}]}
+
+
+
+[Prop {_nomP = "location", _val = VS "buit"},Prop {_nomP = "since", _val = VDate (Date {_dia = 0, _mes = 0, _any = 0})},Prop {_nomP = "date", _val = VDate (Date {_dia = 0, _mes = 0, _any = 0})},Prop {_nomP = "nLikes", _val = VI 0},Prop {_nomP = "content", _val = VS "buit"},Prop {_nomP = "firstName", _val = VS "buit"},Prop {_nomP = "lastName", _val = VS "buit"},Prop {_nomP = "gender", _val = VS "buit"},Prop {_nomP = "homeTown", _val = VS "buit"},Prop {_nomP = "homeCountry", _val = VS "buit"},Prop {_nomP = "birthDay", _val = VDate (Date {_dia = 0, _mes = 0, _any = 0})},Prop {_nomP = "workPlace", _val = VS "buit"},Prop {_nomP = "workPosition", _val = VS "buit"},Prop {_nomP = "city", _val = VS "buit"},Prop {_nomP = "country", _val =VS "buit"},Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 0, _mes = 0, _any = 0})},Prop {_nomP = "jobTraining", _val =VS "buit"},Prop {_nomP = "awards", _val = VI 0},Prop {_nomP = "seniority", _val = VI 0}]
+
+
+
+["n1","p1","n2","p2","n3","p3","n4","p4","n5","p5","n6","p6","n7","p7","n8","p8","n9","p9","n10","p10","10","pt1","pt2","pt3"," pt4","pt5","pt6","i1","i2","i3","i4","i6","i7","i5","i8"] [Edge {_nomEdge = "e1", _nomNodeInici = "n1", _nomNodeFi = "p1"},Edge {_nomEdge = "e2", _nomNodeInici = "n2", _nomNodeFi = "p2"},Edge {_nomEdge = "e3", _nomNodeInici = "n3", _nomNodeFi = "p3"},Edge {_nomEdge = "e4", _nomNodeInici = "n4", _nomNodeFi = "p4"},Edge {_nomEdge = "e5", _nomNodeInici = "n5", _nomNodeFi = "p5"},Edge {_nomEdge = "e6", _nomNodeInici = "n6", _nomNodeFi = "p6"},Edge {_nomEdge = "e7", _nomNodeInici = "n7", _nomNodeFi = "p7"},Edge {_nomEdge = "e8", _nomNodeInici = "n8", _nomNodeFi = "p8"},Edge {_nomEdge = "e9", _nomNodeInici = "n9", _nomNodeFi = "p9"},Edge {_nomEdge = "e10", _nomNodeInici = "n10", _nomNodeFi = "p10"},Edge {_nomEdge = "f1", _nomNodeInici = "n5", _nomNodeFi = "n7"},Edge {_nomEdge = "f2", _nomNodeInici = "n7", _nomNodeFi = "n1"},Edge {_nomEdge = "f3", _nomNodeInici = "n3", _nomNodeFi = "n1"},Edge {_nomEdge = "f4", _nomNodeInici = "n2", _nomNodeFi = "n1"},Edge {_nomEdge = "f5", _nomNodeInici = "n1", _nomNodeFi = "n2"},Edge {_nomEdge = "f6", _nomNodeInici = "n2", _nomNodeFi = "n8"},Edge {_nomEdge = "f7", _nomNodeInici = "n7", _nomNodeFi = "n8"},Edge {_nomEdge = "f8", _nomNodeInici = "n8", _nomNodeFi = "n7"},Edge {_nomEdge = "f9", _nomNodeInici = "n4", _nomNodeFi = "n8"},Edge {_nomEdge = "f10", _nomNodeInici = "n8", _nomNodeFi = "n4"},Edge {_nomEdge = "f11", _nomNodeInici = "n3", _nomNodeFi = "n5"},Edge {_nomEdge = "f12", _nomNodeInici = "n10", _nomNodeFi = "n5"},Edge {_nomEdge = "f13", _nomNodeInici = "n6", _nomNodeFi = "10"},Edge {_nomEdge = "f14", _nomNodeInici = "n6", _nomNodeFi = "n4"},Edge {_nomEdge = "f15", _nomNodeInici = "n4", _nomNodeFi = "n6"},Edge {_nomEdge = "f16", _nomNodeInici = "n4", _nomNodeFi = "n9"},Edge {_nomEdge = "f17", _nomNodeInici = "n7", _nomNodeFi = "n10"},Edge {_nomEdge = "pp1", _nomNodeInici = "n1", _nomNodeFi = "pt1"},Edge {_nomEdge = "pp2", _nomNodeInici = "n2", _nomNodeFi = "pt2"},Edge {_nomEdge = "pp3", _nomNodeInici = "n4", _nomNodeFi = "pt3"},Edge {_nomEdge = "pp4", _nomNodeInici = "n4", _nomNodeFi = "pt4"},Edge {_nomEdge = "pp5", _nomNodeInici = "n9", _nomNodeFi = "pt5"},Edge {_nomEdge = "pp6", _nomNodeInici = "n9", _nomNodeFi = "pt6"},Edge {_nomEdge = "pi1", _nomNodeInici = "n1", _nomNodeFi = "i1"},Edge {_nomEdge = "pi2", _nomNodeInici = "n2", _nomNodeFi = "i2"},Edge {_nomEdge = "pi3", _nomNodeInici = "n2", _nomNodeFi = "i3"},Edge {_nomEdge = "pi4", _nomNodeInici = "n4", _nomNodeFi = "i4"},Edge {_nomEdge = "pi5", _nomNodeInici = "n9", _nomNodeFi = "i6"},Edge {_nomEdge = "pi6", _nomNodeInici = "n9", _nomNodeFi = "i7"},Edge {_nomEdge = "pi7", _nomNodeInici = "n5", _nomNodeFi = "i5"},Edge {_nomEdge = "pi8", _nomNodeInici = "n3", _nomNodeFi = "i8"},Edge {_nomEdge = "l1", _nomNodeInici = "n1", _nomNodeFi = "p2"},Edge {_nomEdge = "l2", _nomNodeInici = "n1", _nomNodeFi = "pt2"},Edge {_nomEdge = "l4", _nomNodeInici = "n8", _nomNodeFi = "i4"},Edge {_nomEdge = "l3", _nomNodeInici = "n8", _nomNodeFi = "pt4"},Edge {_nomEdge = "l5", _nomNodeInici = "n3", _nomNodeFi = "i2"},Edge {_nomEdge = "l6", _nomNodeInici = "n3", _nomNodeFi = "pt1"},Edge {_nomEdge = "l7", _nomNodeInici = "n3", _nomNodeFi = "i1"},Edge {_nomEdge = "l8", _nomNodeInici = "n6", _nomNodeFi = "p10"},Edge {_nomEdge = "l9", _nomNodeInici = "n6", _nomNodeFi = "i4"},Edge {_nomEdge = "l10", _nomNodeInici = "n4", _nomNodeFi = "i4"},Edge {_nomEdge = "ed1", _nomNodeInici = "n1", _nomNodeFi = "p2"},Edge {_nomEdge = "ed2", _nomNodeInici = "n4", _nomNodeFi = "p10"},Edge {_nomEdge = "ed3", _nomNodeInici = "n8", _nomNodeFi = "p7"},Edge {_nomEdge = "ed4", _nomNodeInici = "n2", _nomNodeFi = "p1"}] Sigma {_nomVertex = "n1", _propietat = Prop {_nomP = "firstName", _val = VS "Joan"}}  [Sigma {_nomVertex = "n1", _propietat = Prop {_nomP = "lastName", _val = VS "Canals"}},Sigma {_nomVertex = "n1", _propietat = Prop {_nomP = "gender", _val = VS "Male"}},Sigma {_nomVertex = "n1", _propietat = Prop {_nomP = "birthday", _val = VS "12-07-95"}},Sigma {_nomVertex = "n1", _propietat = Prop {_nomP = "homeTown", _val = VS "Barcelona"}},Sigma {_nomVertex = "n2", _propietat = Prop {_nomP = "firstName", _val = VS "Rosa"}},Sigma {_nomVertex = "n2", _propietat = Prop {_nomP = "lastName", _val = VS "Martinez"}},Sigma {_nomVertex = "n2", _propietat = Prop {_nomP = "gender", _val = VS "female"}},Sigma {_nomVertex = "n2", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "n3", _propietat = Prop {_nomP = "firstName", _val = VS "Teresa"}},Sigma {_nomVertex = "n3", _propietat = Prop {_nomP = "lastName", _val = VS "Blanco"}},Sigma {_nomVertex = "n3", _propietat = Prop {_nomP = "birthday", _val = VS "06-11-92"}},Sigma {_nomVertex = "n3", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "n4", _propietat = Prop {_nomP = "firstName", _val = VS "Bob"}},Sigma {_nomVertex = "n4", _propietat = Prop {_nomP = "lastName", _val = VS "Rusell"}},Sigma {_nomVertex = "n4", _propietat = Prop {_nomP = "homeTown", _val = VS "Houston"}},Sigma {_nomVertex = "n4", _propietat = Prop {_nomP = "country", _val = VS "USA"}},Sigma {_nomVertex = "n5", _propietat = Prop {_nomP = "firstName", _val = VS "Alice"}},Sigma {_nomVertex = "n5", _propietat = Prop {_nomP = "lastName", _val = VS "Rodriguez"}},Sigma {_nomVertex = "n5", _propietat = Prop {_nomP = "homeTown", _val = VS "NewYork"}},Sigma {_nomVertex = "n5", _propietat = Prop {_nomP = "country", _val = VS "USA"}},Sigma {_nomVertex = "n5", _propietat = Prop {_nomP = "gender", _val = VS "female"}},Sigma {_nomVertex = "n5", _propietat = Prop {_nomP = "birthday", _val = VS "10-12-96"}},Sigma {_nomVertex = "n6", _propietat = Prop {_nomP = "firstName", _val = VS "Luis"}},Sigma {_nomVertex = "n6", _propietat = Prop {_nomP = "lastName", _val = VS "Jackson"}},Sigma {_nomVertex = "n6", _propietat = Prop {_nomP = "country", _val = VS "Panama"}},Sigma {_nomVertex = "n7", _propietat = Prop {_nomP = "firstName", _val = VS "Anna"}},Sigma {_nomVertex = "n7", _propietat = Prop {_nomP = "lastName", _val = VS "Lopez"}},Sigma {_nomVertex = "n7", _propietat = Prop {_nomP = "homeTown", _val = VS "Barcelona"}},Sigma {_nomVertex = "n7", _propietat = Prop {_nomP = "birthday", _val = VS "23-05-96"}},Sigma {_nomVertex = "n8", _propietat = Prop {_nomP = "firstName", _val = VS "Chiara"}},Sigma {_nomVertex = "n8", _propietat = Prop {_nomP = "lastName", _val = VS "Figarella"}},Sigma {_nomVertex = "n8", _propietat = Prop {_nomP = "gender", _val = VS "female"}},Sigma {_nomVertex = "n8", _propietat = Prop {_nomP = "Country", _val = VS "Venezuela"}},Sigma {_nomVertex = "n9", _propietat = Prop {_nomP = "firstName", _val = VS "Tomas"}},Sigma {_nomVertex = "n9", _propietat = Prop {_nomP = "lastName", _val = VS "Coll"}},Sigma {_nomVertex = "n9", _propietat = Prop {_nomP = "Country", _val = VS "Spain"}},Sigma {_nomVertex = "n10", _propietat = Prop {_nomP = "fistName", _val = VS "Josep"}},Sigma {_nomVertex = "n10", _propietat = Prop {_nomP = "lastName", _val = VS "Garcia"}},Sigma {_nomVertex = "n10", _propietat = Prop {_nomP = "gender", _val = VS "male"}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "workPlace", _val = VS "Google"}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "workPosition", _val = VS "ProjectLeader"}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "country", _val = VS "USA"}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "seniority", _val = VI 10}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "awards", _val = VI 3}},Sigma {_nomVertex = "p1", _propietat = Prop {_nomP = "nLikes", _val = VI 100}},Sigma {_nomVertex = "p2", _propietat = Prop {_nomP = "workPlace", _val = VS "Google"}},Sigma {_nomVertex = "p2", _propietat = Prop {_nomP = "country", _val = VS "USA"}},Sigma {_nomVertex = "p2", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p2", _propietat = Prop {_nomP = "nLikes", _val = VI 1}},Sigma {_nomVertex = "p2", _propietat = Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 1, _mes = 1, _any = 2016})}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = "workPlace", _val = VS "Meta"}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = "workPosition", _val = VS "ProjectLeader"}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = "country", _val = VS "USA"}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = "nLikes", _val = VI 5}},Sigma {_nomVertex = "p3", _propietat = Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 1, _mes = 9, _any = 2021})}},Sigma {_nomVertex = "p4", _propietat = Prop {_nomP = "workPlace", _val = VS "Google"}},Sigma {_nomVertex = "p4", _propietat = Prop {_nomP = "workPosition", _val = VS "developer"}},Sigma {_nomVertex = "p4", _propietat = Prop {_nomP = "country", _val = VS "Cibespace"}},Sigma {_nomVertex = "p4", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p4", _propietat = Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 22, _mes = 10, _any = 2019})}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "workPlace", _val = VS "MNG"}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "workPosition", _val = VS "DataScientist"}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "jobTraining", _val = VS "Economist"}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "awards", _val = VI 1}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "nLikes", _val = VI 3}},Sigma {_nomVertex = "p5", _propietat = Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 10, _mes = 3, _any = 2017})}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "workPlace", _val = VS "UPC"}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "workPosition", _val = VS "Lecturer"}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "jobTraining", _val = VS "Mathematician"}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "seniority", _val = VI 20}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "awards", _val = VI 1}},Sigma {_nomVertex = "p6", _propietat = Prop {_nomP = "nLikes", _val = VI 10}},Sigma {_nomVertex = "p7", _propietat = Prop {_nomP = "workPlace", _val = VS "UPC"}},Sigma {_nomVertex = "p7", _propietat = Prop {_nomP = "workPosition", _val = VS "Lecturer"}},Sigma {_nomVertex = "p7", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "p7", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p7", _propietat = Prop {_nomP = "seniority", _val = VI 15}},Sigma {_nomVertex = "p8", _propietat = Prop {_nomP = "workPlace", _val = VS "MNG"}},Sigma {_nomVertex = "p8", _propietat = Prop {_nomP = "workPosition", _val = VS "ProjectLeader"}},Sigma {_nomVertex = "p8", _propietat = Prop {_nomP = "country", _val = VS "Spain"}},Sigma {_nomVertex = "p8", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p8", _propietat = Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 1, _mes = 4, _any = 2010})}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = "workPlace", _val = VS "Meta"}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = "workPosition", _val = VS "3DGraphicalDesigner"}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = "country", _val = VS "Ciberspace"}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = "nLikes", _val = VI 3}},Sigma {_nomVertex = "p9", _propietat = Prop {_nomP = "workingSince", _val = VDate (Date {_dia = 15, _mes = 10, _any = 2021})}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "workPlace", _val = VS "UPC"}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "workPosition", _val = VS "Lecturer"}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "city", _val = VS "Barcelona"}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "jobTraining", _val = VS "CS-engineer"}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "seniority", _val = VI 15}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "awards", _val = VI 1}},Sigma {_nomVertex = "p10", _propietat = Prop {_nomP = "nLikes", _val = VI 10}},Sigma {_nomVertex = "pt1", _propietat = Prop {_nomP = "content", _val = VS "Use-Higher-Order-Functions-when-necessary"}},Sigma {_nomVertex = "pt1", _propietat = Prop {_nomP = "nLikes", _val = VI 100}},Sigma {_nomVertex = "pt2", _propietat = Prop {_nomP = "content", _val = VS "Take-care-the-efficiency-of-your-programs"}},Sigma {_nomVertex = "pt2", _propietat = Prop {_nomP = "nLikes", _val = VI 20}},Sigma {_nomVertex = "pt2", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 23, _mes = 10, _any = 2021})}},Sigma {_nomVertex = "pt3", _propietat = Prop {_nomP = "content", _val = VS "Take-care-the-memory-consum-of-your-programs"}},Sigma {_nomVertex = "pt3", _propietat = Prop {_nomP = "nLikes", _val = VI 25}},Sigma {_nomVertex = "pt3", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 15, _mes = 9, _any = 2021})}},Sigma {_nomVertex = "pt4", _propietat = Prop {_nomP = "content", _val = VS "Take-care-the-legibility-of-your-programs"}},Sigma {_nomVertex = "pt4", _propietat = Prop {_nomP = "nLikes", _val = VI 20}},Sigma {_nomVertex = "pt4", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 15, _mes = 9, _any = 2021})}},Sigma {_nomVertex = "pt5", _propietat = Prop {_nomP = "content", _val = VS "Enjoy-programming-in-Haskell"}},Sigma {_nomVertex = "pt5", _propietat = Prop {_nomP = "nLikes", _val = VI 100}},Sigma {_nomVertex = "pt5", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 15, _mes = 9, _any = 2021})}},Sigma {_nomVertex = "pt6", _propietat = Prop {_nomP = "content", _val = VS "Mind-the-indentation-in-your-programs"}},Sigma {_nomVertex = "pt6", _propietat = Prop {_nomP = "nLikes", _val = VI 35}},Sigma {_nomVertex = "pt6", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 23, _mes = 10, _any = 2021})}},Sigma {_nomVertex = "i1", _propietat = Prop {_nomP = "location", _val = VS "Barcelona"}},Sigma {_nomVertex = "i1", _propietat = Prop {_nomP = "nLikes", _val = VI 50}},Sigma {_nomVertex = "i2", _propietat = Prop {_nomP = "location", _val = VS "Caracas"}},Sigma {_nomVertex = "i2", _propietat = Prop {_nomP = "nLikes", _val = VI 50}},Sigma {_nomVertex = "i2", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 26, _mes = 10, _any = 2019})}},Sigma {_nomVertex = "i3", _propietat = Prop {_nomP = "location", _val = VS "NewYork"}},Sigma {_nomVertex = "i3", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 12, _mes = 12, _any = 2017})}},Sigma {_nomVertex = "i4", _propietat = Prop {_nomP = "location", _val = VS "Tibidabo"}},Sigma {_nomVertex = "i4", _propietat = Prop {_nomP = "nlikes", _val = VS "10"}},Sigma {_nomVertex = "i4", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 15, _mes = 10, _any = 2021})}},Sigma {_nomVertex = "f1", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 14, _mes = 2, _any = 2019})}},Sigma {_nomVertex = "f2", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 26, _mes = 7, _any = 2018})}},Sigma {_nomVertex = "f3", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 5, _mes = 4, _any = 2019})}},Sigma {_nomVertex = "f6", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 7, _mes = 8, _any = 2020})}},Sigma {_nomVertex = "f9", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 16, _mes = 9, _any = 2016})}},Sigma {_nomVertex = "f11", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 24, _mes = 8, _any = 2018})}},Sigma {_nomVertex = "f13", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 28, _mes = 9, _any = 2016})}},Sigma {_nomVertex = "f14", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 6, _mes = 9, _any = 2017})}},Sigma {_nomVertex = "f15", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 15, _mes = 4, _any = 2017})}},Sigma {_nomVertex = "f16", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 7, _mes = 12, _any = 2019})}},Sigma {_nomVertex = "pp1", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 16, _mes = 12, _any = 2018})}},Sigma {_nomVertex = "pp2", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 17, _mes = 11, _any = 2020})}},Sigma {_nomVertex = "pp3", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 15, _mes = 9, _any = 2018})}},Sigma {_nomVertex = "pp4", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 13, _mes = 5, _any = 2019})}},Sigma {_nomVertex = "pp5", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 4, _mes = 12, _any = 2020})}},Sigma {_nomVertex = "pp6", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 4, _mes = 12, _any = 2019})}},Sigma {_nomVertex = "pi2", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 29, _mes = 2, _any = 2020})}},Sigma {_nomVertex = "pi3", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 3, _mes = 8, _any = 2019})}},Sigma {_nomVertex = "pi4", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 19, _mes = 10, _any = 2021})}},Sigma {_nomVertex = "pi5", _propietat = Prop {_nomP = "date", _val = VDate (Date {_dia = 17, _mes = 11, _any = 2017})}},Sigma {_nomVertex = "pi8", _propietat = Prop {_nomP = "since", _val = VDate (Date {_dia = 5, _mes = 7, _any = 2020})}}]
+
+
+
+
+[Edge {_nomEdge = "e1", _nomNodeInici = "n1", _nomNodeFi = "p1"},Edge {_nomEdge = "e2", _nomNodeInici = "n2", _nomNodeFi = "p2"}]

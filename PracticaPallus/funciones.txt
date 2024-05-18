@@ -1,0 +1,64 @@
+Data.List (nub, isInfixOf)
+nub :: Eq a => [a] -> [a]
+
+. The nub function removes duplicate elements from a list. In particular, it keeps only the first occurrence of each element. (The name nub means `essence'.) It is a special case of nubBy, which allows the programmer to supply their own equality test.
+
+>>> nub [1,2,3,4,3,2,1,2,4,3,5]
+[1,2,3,4,5]
+
+isInfixOf :: Eq a => [a] -> [a] -> Bool
+
+The isInfixOf function takes two lists and returns True iff the first list is contained, wholly and intact, anywhere within the second.
+
+>>> isInfixOf "Haskell" "I really like Haskell."
+True
+
+>>> isInfixOf "Ial" "I really like Haskell."
+False
+
+
+
+> splitOn "x" "axbxc"
+["a","b","c"]
+
+> splitOn "x" "axbxcx"
+["a","b","c",""]
+
+splitOn :: Eq a => [a] -> [a] -> [[a]]
+
+Split on the given sublist. Equivalent to split . dropDelims . onSublist. For example:
+
+splitOn ".." "a..b...c....d.." == ["a","b",".c","","d",""]
+
+In some parsing combinator frameworks this is also known as sepBy.
+
+Note that this is the right inverse of the intercalate function from Data.List, that is,
+
+intercalate x . splitOn x === id
+
+splitOn x . intercalate x is the identity on certain lists, but it is tricky to state the precise conditions under which this holds. (For example, it is not enough to say that x does not occur in any elements of the input list. Working out why is left as an exercise for the reader.)
+
+
+
+
+
+strip :: String -> String
+
+Removes any whitespace characters that are present at the start or end of a string. Does not alter the internal contents of a string. If no whitespace characters are present at the start or end of a string, returns the original string unmodified. Safe to use on any string.
+
+Note that this may differ from some other similar functions from other authors in that:
+
+    If multiple whitespace characters are present all in a row, they are all removed;
+    If no whitespace characters are present, nothing is done.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+"progenitor ana brooke. progenitor xerces brooke. progenitor brooke damocles. progenitor X Z & ancestre Z Y => ancestre X Y. progenitor X Y => ancestre X Y. ancestre X Y & ancestre Y damocles => query X Y."

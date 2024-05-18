@@ -1,0 +1,124 @@
+
+-- No serveix lo de sota
+-- obtenció base coneixement a partir d'un programa
+-- obtenir_Base_Coneixement:: [Regla] -> BaseConeixement
+-- obtenir_Base_Coneixement programa 
+--     | programa == [] = []
+--     | programa /= []  && = (obte_atoms_ground head programa) ++ (obtenir_atoms_ground (tail programa))
+-- -- 
+-- obte_atoms_ground regla = generar_atoms_ground (_cap regla : _cos regla)
+-- -- --     
+-- generar_atoms_ground atoms
+--     | atoms == [] = []
+--     | otherwise = if es_atom_ground $ head atoms then (head atoms) : (generar_atoms_ground $ tail atoms) else generar_atoms_ground $ tail atoms
+-- -- --  
+-- es_atom_ground (Atom nom termes) 
+--     | (terme_ground (head termes)) && (terme_ground (head $ tail termes)) = True
+--     | otherwise = False
+-- -- --            
+-- terme_ground:: Term -> Bool
+-- terme_ground terme
+--     | esVar terme == False = True -- si no es en majuscules, és una constant
+--     | otherwise = False -- si esta en minuscules, és una variable
+-- 
+-- -- fi obtenció atoms ground programa
+--  no serveix el de dalt
+-- 
+-- -- tractament1 pregunta programa
+--          -- avaluaAtom :: BaseConeixement -> Atom -> [ Sustitucio ] -> [Sustitucio]
+-- avaluaAtom b_c atom sustitucions = sustitucions
+--             
+-- fusiona::Sustitucio -> Sustitucio -> Sustitucio
+-- fusiona sus1 sus2 = -- retorna la llista de substitucions de comparar sus1 amb head sus2
+--     if sus2 /= [] then fusiona' sus1 (head sus2) ++ fusiona sus1 (tail sus2) else sus1
+-- 
+
+-- fusiona' sus1 sus2 = fusiona2 (nub (sus1 ++ sus2))
+-- 
+-- fusiona2  sus
+--     | 
+--Mira de fusionar les head sus1 amb terms 
+-- fusiona3 sus1 termes 
+--     |sus1 == [] = [()]
+--     | sus1 /= [] && esVar $ fst $ head $ sus1 && esIgual (fst $ head sus1) (fst termes) && esIgual(snd $ head sus1) (snd termes) = (fst $ head sus1, snd $ head sus1)] ++ fusiona (tail $ tail sus1) sus2 -- X Y  X Y
+--     | sus1 /= [] && esvariableiconstant11 && esvariableiconsta22 = [(var11, ct11), (var12, ct12)] ++ fusiona (tail $ tail sus1) sus2 -- X Y  X Y
+--     | sus1 /= [] && esvariableconstant12 && esvariableconstant21 = [(var12, ct12),(var21, ct21)] ++ fusiona (tail $ tail sus1) sus2 -- X Y  Y X
+--     | sus1 /= [] && esvariableconstant11 && not(esvariableconstant22) = [(var11, ct11)] ++ fusiona(tail $ tail sus1) sus2 -- X Y  X Z        
+--     | sus1 /= [] && esvariableconstant12 && not(esvariableconstant21) = [(var12, ct12)] ++ fusiona(tail $ tail sus1) sus2-- X Y Z X
+--     | sus1 /= [] && esvariableconstant21 && not(esvariableconstant12) = [(var21, ct21)] ++ fusiona(tail $ tail sus1) sus2-- Y X X Z
+--     | sus1 /= [] && esvariableconstant22 && not(esvariableconstant11) = [(var22, ct22)] ++ fusiona(tail $ tail sus1) sus2-- Y X Z X
+--     | otherwise = fusiona (tail sus1) sus2
+
+-- fusiona'::Sustitucio -> (Term, Term) -> Sustitucio
+-- fusiona' sus1 sus2 =
+--     let var11 = fst $ head sus1-- varXY es refereix a la variable en la posició X de la Substitucio pasada per paràmetre susY on X = 0 o X = 1 i Y = 0 o Y = 1
+--         var12 = fst $ sus2
+--         var21 = fst $ head $ tail sus1
+--         var22 = snd $ sus2
+--         ct11 = snd $ head sus1-- ctXY es refereix a la constant en la posició X de la Substitucio pasada per paràmetre susY on (X = 0 o X = 1) i (Y = 0 o Y = 1)
+--         ct12 = snd sus2
+--         ct21 = snd $ tail sus1
+--         ct22 = getString $ snd $ sus2
+--         in
+--             fusiona2 sus1 sus2 terms var11 var12 var21 var22 ct11 ct12 ct21 ct22
+--             
+-- fusiona2 sus1 ses2 terms var11 var12 var21 var22 ct11 ct12 ct21 ct22 = 
+--     let esvariableiconstant11 = var11 == var12 && ct11 == ct12 -- la variable i constant de la primera posició son iguals en le dues sus X y  X z       y = z o z != y
+--         esvariableiconstant22 = var21 == var22 && ct21 == ct22 -- la variable i constant de la segona posició son iguals en les dues sus y X  z X       y = z o z != y
+--         esvariableiconstant12 = var11 == var22 && ct11 == ct22 -- la variable i constant de la primera posició en sus1 = la segona de sus2 X y  z X     y = z o z != y
+--         esvariableiconstant21 = var21 == var12 && ct21 == ct12 -- la variable i constant de la segona posició en sus1 = la primera de sus2 y X  X z     y = z o z != y
+--         in
+--             fusiona3 sus1 ses2 terms var11 var12 var21 var22 ct11 ct12 ct21 ct22 esvariableconstant11 esvariableconstant12 esvariableconstant21 esvariableconstant22
+--     
+-- fusiona3 sus1 terms var11 var12 var21 var22 ct11 ct12 ct21 ct22 esvariableconstant11 esvariableconstant12 esvariableconstant21 esvariableconstant22
+--     |sus1 == [] = [()]
+--     | sus1 /= [] && esvariableiconstant11 && esvariableiconsta22 = [(var11, ct11), (var12, ct12)] ++ fusiona (tail $ tail sus1) sus2 -- X Y  X Y
+--     | sus1 /= [] && esvariableconstant12 && esvariableconstant21 = [(var12, ct12),(var21, ct21)] ++ fusiona (tail $ tail sus1) sus2 -- X Y  Y X
+--     | sus1 /= [] && esvariableconstant11 && not(esvariableconstant22) = [(var11, ct11)] ++ fusiona(tail $ tail sus1) sus2 -- X Y  X Z        
+--     | sus1 /= [] && esvariableconstant12 && not(esvariableconstant21) = [(var12, ct12)] ++ fusiona(tail $ tail sus1) sus2-- X Y Z X
+--     | sus1 /= [] && esvariableconstant21 && not(esvariableconstant12) = [(var21, ct21)] ++ fusiona(tail $ tail sus1) sus2-- Y X X Z
+--     | sus1 /= [] && esvariableconstant22 && not(esvariableconstant11) = [(var22, ct22)] ++ fusiona(tail $ tail sus1) sus2-- Y X Z X
+--     | otherwise = fusiona (tail $ tail sus1) sus2
+--     
+--         
+-- --fi avaluar Regles i generacio de noves bases de coneixement
+-- 
+
+
+    -- fusiona3 sus1 terms var11 var12 var21 var22 ct11 ct12 ct21 ct22 esvariableconstant11 esvariableconstant12 esvariableconstant21 esvariableconstant22
+    --     |sus1 == [] = [()]
+    --     | sus1 /= [] && esvariableiconstant11 && esvariableiconsta22 = [(var11, ct11), (var12, ct12)] ++ fusiona (tail $ tail sus1) sus2 -- X Y  X Y
+    --     | sus1 /= [] && esvariableconstant12 && esvariableconstant21 = [(var12, ct12),(var21, ct21)] ++ fusiona (tail $ tail sus1) sus2 -- X Y  Y X
+    --     | sus1 /= [] && esvariableconstant11 && not(esvariableconstant22) = [(var11, ct11)] ++ fusiona(tail $ tail sus1) sus2 -- X Y  X Z
+    --     | sus1 /= [] && esvariableconstant12 && not(esvariableconstant21) = [(var12, ct12)] ++ fusiona(tail $ tail sus1) sus2-- X Y Z X
+    --     | sus1 /= [] && esvariableconstant21 && not(esvariableconstant12) = [(var21, ct21)] ++ fusiona(tail $ tail sus1) sus2-- Y X X Z
+    --     | sus1 /= [] && esvariableconstant22 && not(esvariableconstant11) = [(var22, ct22)] ++ fusiona(tail $ tail sus1) sus2-- Y X Z X
+    --     | otherwise = fusiona (tail $ tail sus1) sus2
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        --putStrLn "No se com avaluar la unio de varios atoms(es la funció escull_sustitucions i fusiona)"
+--     | length (termes) == 2 && length cosp > 1 = print (consequencia programa []) -- query amb 2 variables i >1 atom al _cos
+    
+--     | length (termes) == 1 = print (avaluaRegla2' (avaluaRegles [] programa) [Atom{_nomPredicat = nomP, _termes = termes}] ) -- query amb 1 variable
+--     | length (termes) == 2 =  print (escull_sustitucions (avaluaRegla2 (consequencia programa) (Regla{ _cap = (Atom{_nomPredicat = nomP, _termes = termes}), _cos = cosP})))-- query amb 2 variables
+
+
+
+-- busca_atom::Programa-> Atom -> Bool
+-- busca_atom p (Atom nomP termes)
+--     | length p == 0 = False
+--     | length p > 0 && ((_cos (head p))== []) && ((_nomPredicat (_cap (head p))) == nomP) && (length (_termes (_cap (head p))) == length termes) && igual_termes (_termes (_cap (head p))) termes = True
+--     |otherwise = busca_atom (tail p) (Atom{_nomPredicat = nomP, _termes = termes})
+--             | cosR == [] && _nomPredicat capR == "query" = respon_pregunta 

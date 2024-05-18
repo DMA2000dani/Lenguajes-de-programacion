@@ -1,0 +1,3 @@
+f :: Term -> ??
+f (Sym s) = ... -- Es un Sym
+f (Var s) = ... -- Es un Var
